@@ -28,3 +28,21 @@ else
     echo "Ok! Skipping Browsers!"
 fi
 
+############# Database Tools #############
+startInstall "############# Database Tools #############"
+echo "Do you wish to install Database Tools (${bold}${green}y${reset}/${bold}${red}n${reset})? "
+read Database
+
+
+CaskDatabaseToolList=(
+    graphiql
+
+)
+if [ "$Database" != "${Database#[Yy]}" ] ;then
+    echo "Ok!"
+    echo "Installing ..." ${CaskDatabaseToolList[@]}
+    brew cask install ${CaskDatabaseToolList[@]}
+
+else
+    echo No
+fi
