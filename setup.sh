@@ -12,3 +12,19 @@ startInstall() {
     echo "${bold}$1${normal}"
 }
 
+############# browser Tools #############
+startInstall "############# Browser Tools #############"
+echo -n "Do you wish to install Browsers (${bold}${green}y${reset}/${bold}${red}n${reset})? "
+read Browser
+
+CaskBrowserList=(
+    google-chrome
+    firefox
+)
+if [ "$Browser" != "${Browser#[Yy]}" ] ;then
+    echo "Ok! Installing firefox and chrome"
+    brew cask install --appdir="/Applications" ${CaskBrowserList[@]}
+else
+    echo "Ok! Skipping Browsers!"
+fi
+
