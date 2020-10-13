@@ -28,5 +28,9 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 Please make sure to update tests as appropriate.
 
+## References
+
+- https://dev.to/therealdanvega/new-macbook-setup-for-developers-2nma
+
 ## License
 [Mozilla Public License 2.0](https://choosealicense.com/licenses/mpl-2.0/)
