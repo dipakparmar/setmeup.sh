@@ -61,5 +61,20 @@ if [ "$Designer" != "${Designer#[Yy]}" ] ;then
     echo "Installing ..." ${CaskDesignerToolList[@]}
     brew cask install --appdir="/Applications" ${CaskDesignerToolList[@]}
 else
-    echo No
+############# Mobile Developer #############
+beginDeploy "############# Mobile Developer #############"
+echo -n "Do you wish to install Mobile Developer Tools (${bold}${green}y${reset}/${bold}${red}n${reset})? "
+read MobileDeveloper
+
+CaskMobileDeveloperToolList=(
+    fastlane
+)
+if [ "$MobileDeveloper" != "${MobileDeveloper#[Yy]}" ] ;then
+    echo "Ok!"
+    echo "Installing ..."
+    brew cask install ${CaskMobileDeveloperToolList[@]}
+else
+    echo "Ok! Skipping "
+fi
+
 fi
