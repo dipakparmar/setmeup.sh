@@ -36,6 +36,7 @@ read Database
 
 CaskDatabaseToolList=(
     graphiql
+    pgadmin4
 
 )
 if [ "$Database" != "${Database#[Yy]}" ] ;then
