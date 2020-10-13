@@ -45,7 +45,7 @@ if [ "$Database" != "${Database#[Yy]}" ] ;then
     brew cask install ${CaskDatabaseToolList[@]}
 
 else
-    echo No
+    echo "Ok! Skipping "
 fi
 
 ############# Designer Tools #############
@@ -61,6 +61,9 @@ if [ "$Designer" != "${Designer#[Yy]}" ] ;then
     echo "Installing ..." ${CaskDesignerToolList[@]}
     brew cask install --appdir="/Applications" ${CaskDesignerToolList[@]}
 else
+    echo "Ok! Skipping "
+fi
+
 ############# Mobile Developer #############
 beginDeploy "############# Mobile Developer #############"
 echo -n "Do you wish to install Mobile Developer Tools (${bold}${green}y${reset}/${bold}${red}n${reset})? "
@@ -141,3 +144,9 @@ if [ "$Productivity" != "${Productivity#[Yy]}" ] ;then
 else
     echo "Ok! Skipping "
 fi
+
+beginDeploy "############# CLEANING HOMEBREW #############"
+brew cleanup
+
+runtime=$((($(date +%s)-$start)/60))
+beginDeploy "############# Total Setup Time ############# $runtime Minutes"
