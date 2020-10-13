@@ -77,4 +77,21 @@ else
     echo "Ok! Skipping "
 fi
 
+
+############# IDEs #############
+beginDeploy "############# IDEs #############"
+echo -n "Do you wish to install IDEs (${bold}${green}y${reset}/${bold}${red}n${reset})? "
+read IDEs
+
+CaskIDEsList=(
+    visual-studio-code
+    android-studio
+)
+if [ "$IDEs" != "${IDEs#[Yy]}" ] ;then
+    echo "Ok!"
+    echo "Installing ..."
+    brew cask install --appdir="/Applications" ${CaskIDEsList[@]}
+    cat myvscode-extensions.txt | xargs -L1 code --install-extension
+else
+    echo "Ok! Skipping "
 fi
