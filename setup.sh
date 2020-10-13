@@ -121,3 +121,23 @@ else
     echo "Ok! Skipping "
 fi
 
+############# Productivity Tools #############
+beginDeploy "############# Productivity Tools #############"
+echo -n "Do you wish to install Productivity Tools (${bold}${green}y${reset}/${bold}${red}n${reset})? "
+read Productivity
+
+CaskProductivityToolList=(
+    slack
+    gpg-suite
+    microsoft-teams
+    microsoft-office
+    zoomus
+    cheatsheet
+)
+if [ "$Productivity" != "${Productivity#[Yy]}" ] ;then
+    echo "Ok!"
+    echo "Installing ..."
+    brew cask install --appdir="/Applications" ${CaskProductivityToolList[@]}
+else
+    echo "Ok! Skipping "
+fi
