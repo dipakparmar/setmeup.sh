@@ -46,3 +46,19 @@ if [ "$Database" != "${Database#[Yy]}" ] ;then
 else
     echo No
 fi
+
+############# Designer Tools #############
+beginDeploy "############# Designer Tools #############"
+echo -n "Do you wish to install Designer Tools (${bold}${green}y${reset}/${bold}${red}n${reset})? "
+read Designer
+
+CaskDesignerToolList=(
+    adobe-creative-cloud
+)
+if [ "$Designer" != "${Designer#[Yy]}" ] ;then
+    echo "Ok!"
+    echo "Installing ..." ${CaskDesignerToolList[@]}
+    brew cask install --appdir="/Applications" ${CaskDesignerToolList[@]}
+else
+    echo No
+fi
