@@ -17,6 +17,12 @@ Do you wish to install Browsers x y z ?
 Enter with y or n
 ```
 
+## Features
+
+- [x] Intreactive Installation with Y & N
+- [ ] Add more package managers (Currently Homebrew)
+- [ ] Allow users to pick the softwares one by one or input manually!
+ 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
