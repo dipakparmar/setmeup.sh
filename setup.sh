@@ -95,3 +95,29 @@ if [ "$IDEs" != "${IDEs#[Yy]}" ] ;then
 else
     echo "Ok! Skipping "
 fi
+
+############# Mac Application #############
+beginDeploy "############# Mac Application #############"
+echo -n "Do you wish to install Mac Application (${bold}${green}y${reset}/${bold}${red}n${reset})? "
+read MacApplication
+
+MacApplicationToolList=(
+    497799835 # Xcode
+    1274495053 # Microsoft To Do
+    1295203466 # Microsoft Remote Desktop 10
+    985367838 # Microsoft Outlook
+)
+if [ "$MacApplication" != "${MacApplication#[Yy]}" ] ;then
+    brew install mas
+    mas install ${MacApplicationToolList[@]}
+
+    echo "######### Save screenshots to ${HOME}/Pictures/Screenshots"
+    defaults write com.apple.screencapture location -string "${HOME}/Pictures/Screenshots"
+
+    echo "######### Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF"
+    defaults write com.apple.screencapture type -string "png"
+
+else
+    echo "Ok! Skipping "
+fi
+
