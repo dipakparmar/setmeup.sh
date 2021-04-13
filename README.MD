@@ -1,4 +1,4 @@
-# setmeup.sh
+# setmeup.sh [WIP]
 
 a tiny library to set your things up :wink: smartly with one command or interactively. 
 
